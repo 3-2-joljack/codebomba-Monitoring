@@ -16,8 +16,8 @@ concurrency:
 
 env:
   AWS_REGION: ap-northeast-2
-  S3_PREFIX: s3://codebomb-deploy/monitoring/
-  EC2_NAME_TAG: codebomb-monitoring
+  S3_PREFIX: s3://team05-01-deploy-0708-635249349258-ap-northeast-2-an/monitoring/
+  EC2_NAME_TAG: team05-01-monitoring
 
 jobs:
   deploy:
@@ -31,10 +31,10 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: AWS 자격증명 (OIDC, codebomb-github-actions)
+      - name: AWS 자격증명 (OIDC, team05-github-actions)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::143924590342:role/codebomb-github-actions
+          role-to-assume: arn:aws:iam::635249349258:role/team05-github-actions
           aws-region: ${{ env.AWS_REGION }}
 
       - name: 설정파일 S3 업로드

@@ -5,7 +5,7 @@ scrape_configs:
   - job_name: "spring"
     metrics_path: /actuator/prometheus
     static_configs:
-      - targets: ["172.31.45.217:8080"]   # ② Spring 사설IP (codebomb-spring)
+      - targets: ["172.31.51.4:8080"]   # ② team05-01-backend 사설IP
         labels:
           application: code-bomba-lms
 
